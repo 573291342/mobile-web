@@ -1,0 +1,28 @@
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: skyblue;
+
+  // 1.less嵌套 子元素样式直接写到父元素里面就可以
+  a {
+    color: red;
+
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+.nav {
+  .logo {
+    color: green;
+  }
+
+  &>p {
+    color: skyblue;
+  }
+
+  &::before {
+    content: "";
+  }
+}
