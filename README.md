@@ -22,8 +22,11 @@
 
 **标准写法**
 
+```html
 <meta name="viewport"
     content="width=device-width, user-scalable=no, minimum-scale=1.0, maxmimum-scale=1.0, initial-scale=1.0">
+```
+
 
 |      属性      |                          说明                          |
 | :------------: | :----------------------------------------------------: |
@@ -211,7 +214,7 @@ rem优点可以通过修改html里面的文字大小来修改页面中的元素�
 - 当你重启浏览器大小的过程中，页面也根据浏览器的宽高重新渲染页面
 - 目前的苹果，安卓，平板设备都用到多媒体查询
 
-#### 语法规范
+### 语法规范
 
 ```css
 @media mediatype and|only|not(media feature){
@@ -239,4 +242,47 @@ css-Code
   | min-width | 定义输出设备中页面最小可见区域的宽度 |
   | max-width | 定义输出设备中页面最大可见区域的宽度 |
 
-  
+### 引入资源
+
+当样式比较繁多的时候，我们可以针对不同的媒体使用不同的stylesheets样式表
+
+语法规范：
+
+```html
+<link rel="stylesheet" href="mystylesheet.css" media="mediatype and|not|only (media feature)"> 
+```
+
+## less基础
+
+- css代码没有逻辑，冗余度高
+- css没有计算能力
+- 不方便维护，不利于复用 
+
+### less介绍 css预处理器
+
+[官网less](http://lesscss.cn)
+
+1. less变量
+
+   @变量名：值；
+
+   规范：
+
+   - 必须以@为前缀
+   - 不能包含特殊字符
+   - 不能以数字开头
+   - 大小写敏感
+
+2. less编译
+
+3. less嵌套
+
+   - less嵌套 子元素样式直接写到父元素里面就可以
+   - 如果没有&符号，则会被解析为后代选择器，如果有&符号，则会解析为自身或者父元素的伪类
+
+4. less运算
+
+   - 任何数字和颜色或者变量都可以参与运算
+   - 运算符左右两边必须有空格
+   -  如果只有一个数有单位则以结果就以这个单位为准
+     - 两个数都有单位，而且不一样，最后结果以第一个单位为准
