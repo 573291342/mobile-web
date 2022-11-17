@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css盒子模型</title>
+  <style>
+    div:nth-child(1) {
+      /* c3盒子模型 border 和 padding 不会撑大盒子*/
+      box-sizing: border-box;
+
+      width: 200px;
+      height: 200px;
+      background-color: skyblue;
+      border: 5px solid #333;
+      padding: 10px;
+    }
+
+    div:nth-child(2) {
+      /* 传统盒子模型 width = border + padding */
+      box-sizing: content-box; 
+
+      margin-top: 20px;
+      width: 200px;
+      height: 200px;
+      background-color: lightgreen;
+      border: 5px solid #333;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <div></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>二倍图的做法</title>
+  <style>
+    /* 需要一个50*50 像素（css像素）的图片 直接放入iPhone8 里面会放大两倍 100*100 就会模糊 */
+    /* 解决方法 准备一个100*100 的图片 手动把图片缩小到50*50（css像素） 这就是二倍图*/
+    img:nth-child(2) {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 模糊的 -->
+  <img src="images/apple50(1).jpg" alt="">
+  <!-- 我们采取2倍图 -->
+  <img src="images/apple100.jpg" alt="">
+</body>
+</html>
