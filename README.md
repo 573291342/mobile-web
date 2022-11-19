@@ -310,7 +310,66 @@ css-Code
 ### container类
 
 1. 响应式布局的容器 固定宽度
-2. 大屏（>1200px）宽度定为1170px
-3. 中屏（>=992）宽度定为970px
-4. 小屏（>=768px）宽度定为750px
+2. 大屏（>1200px）宽度定为1140px
+3. 中屏（>=992）宽度定为940px
+4. 小屏（>=768px）宽度定为720px
 5. 超小屏（100%）
+
+## 栅格系统
+
+```html
+<!-- 在超大屏幕下放四分，在中等屏幕下放三分，在小屏幕小放两份，在超小屏幕下放一份 -->
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">1</div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">2</div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">3</div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">4</div>
+    </div>
+```
+
+### 列嵌套
+
+```html
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <!-- 列嵌套最好加一行row 可以去掉父元素的padding值 且会和父元素一样高 -->
+        <div class="row">
+          <div class="col-md-6">a</div>
+          <div class="col-md-6">b</div>
+        </div>
+      </div>
+      <div class="col-md-4">2</div>
+      <div class="col-md-4">3</div>
+    </div>
+  </div>
+```
+
+### 列偏移
+
+.`col-md-offset-*`实现向右偏移
+
+### 列排序
+
+使用`.col-md-push-*`和`.col-md-pull-*`类就可以实现列排序
+
+```html
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-push-8">左</div>
+      <div class="col-md-8 col-md-pull-4">右</div>
+    </div>
+</div>
+```
+
+### 响应式工具
+
+为了加快对移动设备友好的页面开发工作，利用媒体查询功能，并使用这些工具类可以方便的针对不同设备展示或隐藏页面内容。
+
+| 类名       | 超小屏幕 | 小屏 | 中屏 | 大屏 |
+| ---------- | -------- | ---- | ---- | ---- |
+| .hidden-xs | 隐藏     | 可见 | 可见 | 可见 |
+| .hidden-sm | 可见     | 隐藏 | 可见 | 可见 |
+| .hidden-md | 可见     | 可见 | 隐藏 | 可见 |
+| .hidden-lg | 可见     | 可见 | 可见 | 隐藏 |
+
