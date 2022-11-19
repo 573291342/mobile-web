@@ -366,10 +366,38 @@ css-Code
 
 为了加快对移动设备友好的页面开发工作，利用媒体查询功能，并使用这些工具类可以方便的针对不同设备展示或隐藏页面内容。
 
-| 类名       | 超小屏幕 | 小屏 | 中屏 | 大屏 |
-| ---------- | -------- | ---- | ---- | ---- |
-| .hidden-xs | 隐藏     | 可见 | 可见 | 可见 |
-| .hidden-sm | 可见     | 隐藏 | 可见 | 可见 |
-| .hidden-md | 可见     | 可见 | 隐藏 | 可见 |
-| .hidden-lg | 可见     | 可见 | 可见 | 隐藏 |
+|    类名    | 超小屏幕 | 小屏 | 中屏 | 大屏 |
+| :--------: | :------: | :--: | :--: | :--: |
+| .hidden-xs |   隐藏   | 可见 | 可见 | 可见 |
+| .hidden-sm |   可见   | 隐藏 | 可见 | 可见 |
+| .hidden-md |   可见   | 可见 | 隐藏 | 可见 |
+| .hidden-lg |   可见   | 可见 | 可见 | 隐藏 |
+
+```html
+<!--3号盒子在中小大屏幕隐藏-->
+<div class="container">
+    <div class="row">
+      <div class="col-xs-3">1</div>
+      <div class="col-xs-3">2</div>
+      <div class="col-xs-3 hidden-md hidden-xs hidden-sm">3</div>
+      <div class="col-xs-3">4</div>
+    </div>
+  </div>
+```
+
+### 显示
+
+```html
+<div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+          <!-- 只有在大屏幕显示 -->
+        <span class="visible-lg">我会显示</span>
+      </div>
+      <div class="col-xs-3">2</div>
+      <div class="col-xs-3 hidden-md hidden-xs hidden-sm">3</div>
+      <div class="col-xs-3">4</div>
+    </div>
+  </div>		
+```
 
